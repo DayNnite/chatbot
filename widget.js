@@ -3,7 +3,7 @@
       const { token, clientId } = options;
   
       try {
-        const response = await fetch('http://localhost:3000/validate-token', {
+        const response = await fetch('http://localhost:10000/validate-token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

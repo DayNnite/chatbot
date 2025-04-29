@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const SECRET_KEY = 'mySuperSecretKey123!@#'; //  IMPORTANT: Change this secret to something unique
 
 app.use(cors());
@@ -15,6 +15,11 @@ const clients = {
   'client-abc123': { active: true },
   'client-def456': { active: false }, 
 };
+
+// Add this to your server.js
+app.get('/', (req, res) => {
+  res.send('Chatbot API is running!');
+});
 
 // Validate token endpoint
 app.post('/validate-token', (req, res) => {
